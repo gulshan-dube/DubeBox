@@ -1,29 +1,32 @@
-DubeBox — Flask + Redis with Docker Compose
+# DubeBox — Flask + Redis with Docker Compose
 A minimal, interview‑ready microservice that runs a Flask API and a Redis backend as separate containers using Docker Compose. You’ll learn containerization, inter‑container networking, and how this maps to AWS ECS.
 
-1) Overview
-Goal: Build a portable microservice with a fast in‑memory store, orchestrated locally with Docker Compose, and explain how it maps to AWS.
+## 1) Overview
+**Goal:** Build a portable microservice with a fast in‑memory store, orchestrated locally with Docker Compose, and explain how it maps to AWS.
 
-Services:
+**Services:**
 
-Flask (web): HTTP API on port 5000
+**Flask (web):** HTTP API on port 5000
 
-Redis (redis): In‑memory key/value store on port 6379
+**Redis (redis):** In‑memory key/value store on port 6379
 
-Why this matters:
+**Why this matters:**
 
-Real‑world relevance: Caching and state storage with Redis are common in production systems and interviews.
+**Real‑world relevance:** Caching and state storage with Redis are common in production systems and interviews.
 
-Cloud translation: Mirrors an ECS task with two containers communicating over a private network.
+**Cloud translation:** Mirrors an ECS task with two containers communicating over a private network.
 
 2) Project structure
-text
+
+```text
 DubeBox/
 ├── app.py
 ├── requirements.txt
 ├── Dockerfile
 ├── docker-compose.yml
 └── venv/               # local dev only (not used inside Docker image)
+```
+
 3) What each file does
 app.py: Flask app with routes to set/get values in Redis.
 
